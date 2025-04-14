@@ -11,3 +11,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  padding-left: 50px;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: sans-serif;
+}
+
+.nav-left a,
+.nav-right a {
+  margin: 0 15px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  color: white;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background-color: #000;
+  color: white;
+}
+
+.hero-text {
+  max-width: 75%;
+  
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero-text p {
+  color: #888;
+  margin: 20px 0;
+}
+
+.hero-text a {
+  background-color: #272626;
+  padding: 15px 30px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #919191;
+  cursor: pointer;
+}
+
+.hero-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.clients {
+  background-color: #000;
+  color: #ccc;
+  padding: 40px 60px;
+  font-family: sans-serif;
+}
+
+.logos {
+  display: flex;
+ 
+ margin-top: 20px;
+  gap: 20px;
+}
+
+.logo {
+  border: 1px solid #333;
+  margin-top: 15px;
+  padding: 20px 20px;
+  border-radius: 8px;
+  background-color: #111;
+}
+
