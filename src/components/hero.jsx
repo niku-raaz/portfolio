@@ -5,6 +5,7 @@ import Profile from '../assets/profile.jpg';
 export default function Hero() {
   return (
     <div className="hero">
+      <div className="aura" aria-hidden="true"></div>
       <div className="hero-content">
         <div className="hero-text">
           <div className="greeting">
