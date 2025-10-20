@@ -1,6 +1,13 @@
+@font-face {
+  font-family: 'Fira Code';
+  src: url('./assets/FiraCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -124,6 +131,11 @@ code {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
 .nav-left a,
 .nav-right a {
   margin: 0 15px;
@@ -132,8 +144,11 @@ code {
   transition: all 0.3s ease;
   font-weight: 500;
   position: relative;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-left a:hover,
@@ -642,7 +657,7 @@ code {
   
   .nav-left {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 10px;
   }
   
@@ -670,3 +685,21 @@ code {
   }
 }
 
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav-left img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, button, span, div {
+  font-family: 'Fira Code', sans-serif;
+}
