@@ -124,7 +124,7 @@ code {
   background: transparent;
   color: white;
   font-family: sans-serif;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -634,6 +634,7 @@ code {
   
   .experience-logo {
     justify-content: center;
+    margin: 0 auto;
   }
   
   .experience-logo img {
@@ -703,3 +704,4 @@ code {
 h1, h2, h3, h4, h5, h6, p, a, button, span, div {
   font-family: 'Fira Code', sans-serif;
 }
+
