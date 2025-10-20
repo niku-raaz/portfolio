@@ -659,7 +659,9 @@ code {
   .nav-left {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    width: 100%;
   }
   
   .nav-left a {
@@ -703,5 +705,9 @@ code {
 
 h1, h2, h3, h4, h5, h6, p, a, button, span, div {
   font-family: 'Fira Code', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
