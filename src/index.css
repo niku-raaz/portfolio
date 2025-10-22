@@ -1,6 +1,13 @@
+@font-face {
+  font-family: 'Fira Code';
+  src: url('./assets/FiraCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -117,11 +124,16 @@ code {
   background: transparent;
   color: white;
   font-family: sans-serif;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
 }
 
 .nav-left a,
@@ -132,8 +144,11 @@ code {
   transition: all 0.3s ease;
   font-weight: 500;
   position: relative;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-left a:hover,
@@ -151,6 +166,37 @@ code {
   position: relative;
   overflow: hidden;
   background: transparent;
+}
+
+.aura {
+  position: absolute;
+  left: 38%;
+  top: 54%;
+  width: 760px;
+  height: 760px;
+  transform: translate(-50%, -50%);
+  filter: blur(60px) saturate(135%);
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 28% 36%, rgba(255, 85, 140, 0.9) 0%, rgba(255, 170, 66, 0.7) 22%, rgba(255, 255, 102, 0.5) 40%, transparent 55%),
+              radial-gradient(circle at 68% 64%, rgba(147, 89, 255, 0.85) 0%, rgba(66, 165, 255, 0.6) 28%, rgba(0, 255, 204, 0.32) 50%, transparent 65%);
+  mix-blend-mode: screen;
+  animation: auraMove 12s ease-in-out infinite, auraHue 9s linear infinite;
+  opacity: 0.95;
+}
+
+@keyframes auraMove {
+  0% { transform: translate(-52%, -52%) scale(1) rotate(0deg); }
+  25% { transform: translate(-58%, -48%) scale(1.02) rotate(4deg); }
+  50% { transform: translate(-52%, -56%) scale(1.04) rotate(0deg); }
+  75% { transform: translate(-48%, -50%) scale(1.01) rotate(-4deg); }
+  100% { transform: translate(-52%, -52%) scale(1) rotate(0deg); }
+}
+
+@keyframes auraHue {
+  0% { filter: blur(80px) saturate(140%) hue-rotate(0deg); }
+  50% { filter: blur(80px) saturate(160%) hue-rotate(40deg); }
+  100% { filter: blur(80px) saturate(140%) hue-rotate(0deg); }
 }
 
 .hero-content {
@@ -189,6 +235,27 @@ code {
   margin: 0 0 15px 0;
   line-height: 1.1;
   text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  animation: aura-glow 10s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes aura-glow {
+  0% {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.3), 0 0 40px rgba(255, 255, 0, 0.2);
+  }
+  25% {
+    text-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(255, 255, 0, 0.3), 0 0 40px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.5), 0 0 30px rgba(0, 255, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.2);
+  }
+  75% {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(255, 255, 0, 0.3), 0 0 40px rgba(255, 0, 255, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.3), 0 0 40px rgba(255, 255, 0, 0.2);
+  }
 }
 
 .title {
@@ -567,6 +634,15 @@ code {
     padding: 20px;
     gap: 30px;
   }
+
+  .aura {
+    width: 420px;
+    height: 420px;
+    left: 50%;
+    top: 48%;
+    filter: blur(40px) saturate(120%);
+    opacity: 0.9;
+  }
   
   .hero-text {
     max-width: 100%;
@@ -619,6 +695,7 @@ code {
   
   .experience-logo {
     justify-content: center;
+    margin: 0 auto;
   }
   
   .experience-logo img {
@@ -642,8 +719,10 @@ code {
   
   .nav-left {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
+    width: 100%;
   }
   
   .nav-left a {
@@ -668,5 +747,28 @@ code {
     min-width: 120px;
     width: calc(50% - 10px);
   }
+}
+
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav-left img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, button, span, div {
+  font-family: 'Fira Code', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
